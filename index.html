@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <title>客語教學觀摩影片</title>
+</head>
+<body>
+  <h2>請輸入您的資料</h2>
+
+  <form id="myForm">
+    <label>姓名：
+      <input type="text" id="name" required>
+    </label>
+    <br><br>
+
+    <label><input type="radio" name="choice" value="A"> 選項 A</label><br>
+    <label><input type="radio" name="choice" value="B"> 選項 B</label><br>
+    <label><input type="radio" name="choice" value="C"> 選項 C</label><br>
+    <label><input type="radio" name="choice" value="D"> 選項 D</label><br>
+    <label><input type="radio" name="choice" value="E"> 選項 E</label><br><br>
+
+    <button type="submit">送出</button>
+  </form>
+
+  <p id="error" style="color: red;"></p>
+
+  <script>
+    const form = document.getElementById('myForm');
+    const errorMsg = document.getElementById('error');
+
+    // 各選項對應的 YouTube URL
+    const youtubeLinks = {
+      A: 'https://www.youtube.com/watch?v=YouTubeLinkA',
+      B: 'https://www.youtube.com/watch?v=YouTubeLinkB',
+      C: 'https://www.youtube.com/watch?v=YouTubeLinkC',
+      D: 'https://www.youtube.com/watch?v=YouTubeLinkD',
+      E: 'https://www.youtube.com/watch?v=YouTubeLinkE'
+    };
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      errorMsg.textContent = ''; // 清除錯誤訊息
+
+      const name = document.getElementById('name').value.trim();
+      const selectedRadio = document.querySelector('input[name="choice"]:checked');
+
+      // 驗證姓名是否填寫
+      if (!name) {
+        errorMsg.textContent = '請填寫姓名';
+        return;
+      }
+
+      // 驗證是否有選擇 radio
+      if (!selectedRadio) {
+        errorMsg.textContent = '請選擇觀摩影片';
+        return;
+      }
+
+      const choice = selectedRadio.value;
+      const timestamp = new Date().toISOString();
+
+      // 傳送到 Google Sheets（請更換 URL）
+      fetch('https://script.google.com/macros/s/AKfycbyXs1mxHZhgzdHHxRrV2rwTFpGmsT4IhbU4Jl4u7PIRrG6fdKksuSNoAgJaVN97koNoNA/exec', {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          name: name,
+          choice: choice,
+          time: timestamp
+        })
+      });
+
+      // 跳轉到對應的 YouTube 連結
+      const youtubeURL = youtubeLinks[choice];
+      if (youtubeURL) {
+        window.location.href = youtubeURL;
+      } else {
+        errorMsg.textContent = '發生錯誤：無對應的影片連結';
+      }
+    });
+  </script>
+</body>
+</html>
