@@ -1,41 +1,123 @@
 <!DOCTYPE html>
-<html lang="zh-Hant">
+<html lang="zh-Han">
+
 <head>
-  <meta charset="UTF-8">
-  <title>客語教學觀摩影片</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta charset="UTF-8">
+    <title>沉浸式客語教學影片</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 </head>
+
 <body>
-  <h2>請輸入您的資料</h2>
+    <main>
+        <header>
+            <h1 id="title">沉浸式客語教學觀摩影片</h1>
+            <p id="description">請輸入姓名，選取影片</p>
+        </header>
+        <form id="myForm">
 
-  <form id="myForm">
-    <label>姓名：
-      <input type="text" id="name" required>
-    </label>
-    <br><br>
+            <div class="form-group">
+                <label for="name" id="name-label">姓名：</label>
+                <input type="text" name="name" id="name" placeholder="請填入姓名" required>
+            </div>
 
-    <label><input type="radio" name="choice" value="A"> 選項 A</label><br>
-    <label><input type="radio" name="choice" value="B"> 選項 B</label><br>
-    <label><input type="radio" name="choice" value="C"> 選項 C</label><br>
-    <label><input type="radio" name="choice" value="D"> 選項 D</label><br>
-    <label><input type="radio" name="choice" value="E"> 選項 E</label><br><br>
+            <div class="form-group">
+                <label for="choice"> 請選取觀看影片： </label>
+                <div class="radio-group">
+                    <input type="radio" name="choice" id="1" value="5/9研習"><label for="1"> 5/9研習 </label>
+                </div>
+                <div class="radio-group">
+                    <input type="radio" name="choice" id="2" value="4/23研習"><label for="2"> 4/23研習 </label>
+                </div>
+                <div class="radio-group">
+                    <input type="radio" name="choice" id="3" value="3/19研習"><label for="3"> 3/19研習 </label>
+                </div>
+                <div class="radio-group">
+                    <input type="radio" name="choice" id="4" value="2/6研習(下午)"><label for="4"> 2/6研習(下午) </label>
+                </div>
+                <div class="radio-group">
+                    <input type="radio" name="choice" id="5" value="2/6 科技媒材融入～極速剪輯影音酷『客』上"><label for="5"> 2/6 科技媒材融入～極速剪輯影音酷『客』上 </label>
+                </div>
+                <div class="radio-group">
+                    <input type="radio" name="choice" id="6" value="2/6 科技媒材融入～極速剪輯影音酷『客』下"><label for="6"> 2/6 科技媒材融入～極速剪輯影音酷『客』下 </label>
+                </div>
+                <div class="radio-group">
+                    <input type="radio" name="choice" id="7" value="2/5 科技媒材融入沉浸式客語教學之廣域應用上"><label for="7"> 2/5 科技媒材融入沉浸式客語教學之廣域應用上 </label>
+                </div>
+                <div class="radio-group">
+                    <input type="radio" name="choice" id="8" value="2/5 科技媒材融入沉浸式客語教學之廣域應用下"><label for="8"> 2/5 科技媒材融入沉浸式客語教學之廣域應用下 </label>
+                </div>
+                <div class="radio-group">
+                    <input type="radio" name="choice" id="9" value="2/5 沉浸式客語教學策略及課程設計及學習情境營造(I)上"><label for="9"> 2/5 沉浸式客語教學策略及課程設計及學習情境營造(I)上 </label>
+                </div>
+                <div class="radio-group">
+                    <input type="radio" name="choice" id="10" value="2/5 沉浸式客語教學策略及課程設計及學習情境營造(I)下"><label for="10"> 2/5 沉浸式客語教學策略及課程設計及學習情境營造(I)下 </label>
+                </div>
+                <div class="radio-group">
+                    <input type="radio" name="choice" id="11" value="1/22 沉浸式專業術語客語化使用及教案撰寫技巧(I)上"><label for="11"> 1/22 沉浸式專業術語客語化使用及教案撰寫技巧(I)上 </label>
+                </div>
+                <div class="radio-group">
+                    <input type="radio" name="choice" id="12" value="1/22 沉浸式專業術語客語化使用及教案撰寫技巧(I)下"><label for="12"> 1/22 沉浸式專業術語客語化使用及教案撰寫技巧(I)下 </label>
+                </div>
+                <div class="radio-group">
+                    <input type="radio" name="choice" id="13" value="1/22 客語沉浸式教學技巧與實務(II)上"><label for="13"> 1/22 客語沉浸式教學技巧與實務(II)上 </label>
+                </div>
+                <div class="radio-group">
+                    <input type="radio" name="choice" id="14" value="1/22 客語沉浸式教學技巧與實務(II)下"><label for="14"> 1/22 客語沉浸式教學技巧與實務(II)下 </label>
+                </div>
+                <div class="radio-group">
+                    <input type="radio" name="choice" id="15" value="12/11 客語沉浸式教學技巧與實務(I)上"><label for="15"> 12/11 客語沉浸式教學技巧與實務(I)上 </label>
+                </div>
+                <div class="radio-group">
+                    <input type="radio" name="choice" id="16" value="12/11 客語沉浸式教學技巧與實務(I)下"><label for="16"> 12/11 客語沉浸式教學技巧與實務(I)下 </label>
+                </div>
+                <div class="radio-group">
+                    <input type="radio" name="choice" id="17" value="11/27 如何設計及執行有趣的沉浸式課程(I) 上"><label for="17"> 11/27 如何設計及執行有趣的沉浸式課程(I) 上 </label>
+                </div>
+                <div class="radio-group">
+                    <input type="radio" name="choice" id="18" value="11/27 如何設計及執行有趣的沉浸式課程(I) 下"><label for="18"> 11/27 如何設計及執行有趣的沉浸式課程(I) 下 </label>
+                </div>
 
-    <button type="submit">送出</button>
-  </form>
+           </div>
 
-  <p id="error" style="color: red;"></p>
+
+            <div class="form-group">
+                <button id="submit" type="submit">觀看影片</button>
+            </div>
+        </form>
+		<p id="error" style="color: red;"></p>
+
+    </main>
 
   <script>
     const form = document.getElementById('myForm');
     const errorMsg = document.getElementById('error');
 
     // 各選項對應的 YouTube URL
-    const youtubeLinks = {
-      A: 'https://www.youtube.com/watch?v=VRM6bxuw1mY',
-      B: 'https://www.youtube.com/watch?v=IvMFMA89Yi8',
-      C: 'https://www.youtube.com/watch?v=EVHYV35f660',
-      D: 'https://www.youtube.com/watch?v=DTfs6klxr2Q',
-      E: 'https://www.youtube.com/watch?v=BN_kAM6fufk'
-    };
+	const youtubeLinks = {
+	  "5/9研習": "https://youtu.be/gESqvbIQgBo",
+	  "4/23研習": "https://youtu.be/KtgVvaRHG0E",
+	  "3/19研習": "https://youtu.be/j1iKokrAA5Q",
+	  "2/6研習(下午)": "https://youtu.be/_epmxHNK_kI",
+	  "2/6 科技媒材融入～極速剪輯影音酷『客』上": "https://youtu.be/Sa398JLAvv0",
+	  "2/6 科技媒材融入～極速剪輯影音酷『客』下": "https://youtu.be/0toKI9dVer4",
+	  "2/5 科技媒材融入沉浸式客語教學之廣域應用上": "https://youtu.be/KeHqn5vpROk",
+	  "2/5 科技媒材融入沉浸式客語教學之廣域應用下": "https://youtu.be/qI29NJyO-VI",
+	  "2/5 沉浸式客語教學策略及課程設計及學習情境營造(I)上": "https://youtu.be/seRqqBPrgLM",
+	  "2/5 沉浸式客語教學策略及課程設計及學習情境營造(I)下": "https://youtu.be/m8yIHrxM7zk",
+	  "1/22 沉浸式專業術語客語化使用及教案撰寫技巧(I)上": "https://youtu.be/NUdzWZLHH28",
+	  "1/22 沉浸式專業術語客語化使用及教案撰寫技巧(I)下": "https://youtu.be/niHd0RRBuuU",
+	  "1/22 客語沉浸式教學技巧與實務(II)上": "https://youtu.be/GacEcumD1Kg",
+	  "1/22 客語沉浸式教學技巧與實務(II)下": "https://youtu.be/xmWlZEVaUkc",
+	  "12/11 客語沉浸式教學技巧與實務(I)下": "https://youtu.be/dtiDg8dqOp8",
+	  "1211 客語沉浸式教學技巧與實務(I)上": "https://youtu.be/3hp_P4z98Xw",
+	  "11/27 如何設計及執行有趣的沉浸式課程(I) 上": "https://youtu.be/iK9XLs7jCJQ",
+	  "11/27 如何設計及執行有趣的沉浸式課程(I) 下": "https://youtu.be/qqhGBFHHVgo"
+	};
+
 
     form.addEventListener('submit', function (e) {
       e.preventDefault();
@@ -82,5 +164,7 @@
       }
     });
   </script>
+
 </body>
+
 </html>
